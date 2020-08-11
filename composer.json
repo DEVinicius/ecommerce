@@ -19,5 +19,7 @@
     },
     "minimum-stability": "dev",
     "require": {
+        "coffeecode/router": "dev-master",
+        "rain/raintpl": "dev-master"
     }
 }
