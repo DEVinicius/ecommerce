@@ -11,15 +11,26 @@ class Rain
      * Instance of Tpl
      */
     private $tpl;
-    
+
     /**
      * @var
      * options array
      */
-    private $defaults;
+    private $defaults = [
+        "data" => []
+    ];
 
-    public function __construct()
+    /**
+     * @var 
+     * array that will be merged with $defaults and options (variable by __construct method)
+     */
+    private $options = [];
+
+    public function __construct(array $options)
     {
+        //merge arrays
+        $this->options = array_merge($this->defaults, $options);
+        
         $config = array(
             "tpl_dir"       => url("theme".DIRECTORY_SEPARATOR."views"),
             "cache_dir"     => url("cache"),
